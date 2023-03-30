@@ -33,26 +33,25 @@ var questions = [
     },
   ];
 
-  function renderNextQuestion(question) {
-    document.querySelector('main').innerHTML = '';
+var currentQuestionIndex = 0;
+var timer = 0;
+var score = 0;
+var intervalId;
+
+function startQuiz() {
+    document.getElementById('intro').style.display = 'none';
+    document.getElementById('quiz').style.display = 'block';
+    renderQuestion();
+    startTimer();
+}
+
+  function renderQuestion() {
+    var currentQuestion = questions[currentQuestionIndex];
+    document.getElementById('question-title').textContent = currentQuestion.title;
+    var choicesEl = document.getElementById('choices');
+    choicesEl.innerHTML = '';
     
-    var questionContainerEl = document.createElement('div');
 
-    var titleEl = document.createElement('h2');
-    titleEl.textContent = question.title;
-    questionContainerEl.appendChild(titleEl);
+    for (var i = 0; i < currentQuestion.choices);
 
-    for (var i=0; i < question.choices.length; i++) {
-        var optionEl = document.createElement('button');
-        optionEl.textContent = question.choices[i];
-        questionContainerEl.appendChild(optionEl);
-    }
-
-    document.querySelector('main').appendChild(questionContainerEl);
   }
-
-  renderNextQuestion(questions[0]);
-  renderNextQuestion(questions[1]);
-  renderNextQuestion(questions[2]);
-  renderNextQuestion(questions[3]);
-  renderNextQuestion(questions[4]);
