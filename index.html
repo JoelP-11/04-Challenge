@@ -1,1 +1,41 @@
-Hi
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web API Code quiz</title>
+
+    <style>
+        button {
+            padding: 20px;
+        }
+    </style>
+    <script src="./style.css"></script>
+</head>
+
+<body>
+    <h1>
+        Coding Quiz Challenge
+    </h1>
+    <main>
+    <div id="intro">
+        <p>Test your Javascript skills with this test!</p>
+        <button id="start-btn">Start Quiz</button>
+    </div>
+    <div id="quiz" style="display:none;">
+    <h2 id="question-title"></h2>
+    <div id="choices"></div>
+    <p>Time: <span id="timer">60</span></p>
+    <p>Score: <span id="score">0</span></p>
+    <input type="text" id="initials" placeholder="Enter your initials">
+    <button id="submit-btn">Submit</button>
+    </div>
+
+</main>
+
+
+
+    <script src="./main.js" ></script>
+</body>
+
+</html>
