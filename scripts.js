@@ -52,6 +52,6 @@ function startQuiz() {
     choicesEl.innerHTML = '';
     
 
-    for (var i = 0; i < currentQuestion.choices);
+    for (var i = 0; i < currentQuestion.choices
 
   }
