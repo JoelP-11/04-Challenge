@@ -62,4 +62,39 @@ function startQuiz() {
     }
     }
 
+    function handleAnswerClick() {
+      if (this.value === questions[currentQuestionIndex].answer) {
+        score++;
+      } else {
+        timer -= 10;
+      }
+      currentQuestionIndex++;
+      if (currentQuestionIndex === questions.length) {
+        endQuiz();
+      } else {
+        renderQuestion();
+      }
+    }
+
+    function startTimer() {
+      intervalId = setInterval(function () {
+        timer--;
+        document.getElementById("timer").textContent = "Time: " + timer;
+        if (timer <= 0) {
+          endQuiz();
+        }
+      }, 1000);
+    }
+
+    function endQuiz() {
+      clearInterval(intervalId);
+      document.getElementById("quiz").style.display = "none";
+      document.getElementById("score").textContent =
+      "Your score is: " + score + " out of " + questions.length;
+      document.getElementById("results").style.display = "block";
+    }
+
+
+
+    
 
