@@ -34,7 +34,7 @@ var questions = [
   ];
 
 var currentQuestionIndex = 0;
-var timer = 0;
+var timer = 60;
 var score = 0;
 var intervalId;
 
@@ -51,7 +51,15 @@ function startQuiz() {
     var choicesEl = document.getElementById('choices');
     choicesEl.innerHTML = '';
     
+    for (var i = 0; i < currentQuestion.choices.length; i++) {
+      var choice = currentQuestion.choices[i];
+      var button = document.createElement("button");
+      button.textContent = choice;
+      button.setAttribute("class", "choice");
+      button.setAttribute("value", choice);
+      button.onclick = handleAnswerClick;
+      choicesEl.appendChild(button);
+    }
+    }
 
-    for (var i = 0; i < currentQuestion.choices
 
-  }
