@@ -36,3 +36,29 @@ button {
     font-size: 1rem;
     cursor: pointer;
 }
+button:hover {
+    background-color: #3e8e41;
+}
+
+ul {
+    list-style:none;
+    margin-bottom: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+input[type="text"] {
+    display:block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+input[type="submit"] {
+    display:block;
+    
+}
