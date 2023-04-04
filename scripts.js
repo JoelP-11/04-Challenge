@@ -41,8 +41,16 @@ var intervalId;
 function startQuiz() {
     document.getElementById('intro').style.display = 'none';
     document.getElementById('quiz').style.display = 'block';
+    shuffleQuestions(questions);
     renderQuestion();
     startTimer();
+}
+
+function shuffleQuestions(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i +1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
 }
 
   function renderQuestion() {
@@ -50,6 +58,8 @@ function startQuiz() {
     document.getElementById('question-title').textContent = currentQuestion.title;
     var choicesEl = document.getElementById('choices');
     choicesEl.innerHTML = '';
+
+    shuffleQuestions(currentQuestion.choices);
     
     for (var i = 0; i < currentQuestion.choices.length; i++) {
       var choice = currentQuestion.choices[i];
@@ -67,6 +77,7 @@ function startQuiz() {
         score++;
       } else {
         timer -= 10;
+        document.getElementById("feedback").textContent = "Incorrect. -10 seconds";
       }
       currentQuestionIndex++;
       if (currentQuestionIndex === questions.length) {
@@ -91,10 +102,10 @@ function startQuiz() {
       document.getElementById("quiz").style.display = "none";
       document.getElementById("score").textContent =
       "Your score is: " + score + " out of " + questions.length;
-      document.getElementById("results").style.display = "block";
+      document.getElementById("result").style.display = "block";
     }
 
 
 
-    
+
 
