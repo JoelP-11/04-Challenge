@@ -39,6 +39,7 @@ var score = 0;
 var intervalId;
 
 function startQuiz() {
+  console.log("startQuiz function called");
     document.getElementById('intro').style.display = 'none';
     document.getElementById('quiz').style.display = 'block';
     shuffleQuestions(questions);
@@ -54,6 +55,7 @@ function shuffleQuestions(array) {
 }
 
   function renderQuestion() {
+    console.log("renderQuestion function called");
     var currentQuestion = questions[currentQuestionIndex];
     document.getElementById('question-title').textContent = currentQuestion.title;
     var choicesEl = document.getElementById('choices');
@@ -73,6 +75,7 @@ function shuffleQuestions(array) {
     }
 
     function handleAnswerClick() {
+      console.log("handleAnswerClick function called");
       if (this.value === questions[currentQuestionIndex].answer) {
         score++;
       } else {
@@ -104,7 +107,6 @@ function shuffleQuestions(array) {
       "Your score is: " + score + " out of " + questions.length;
       document.getElementById("result").style.display = "block";
     }
-
 
 
 
