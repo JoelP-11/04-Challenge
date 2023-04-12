@@ -33,7 +33,7 @@ var questions = [
       answer: 'console.log',
     },
   ];
-
+  
   var questionIndex = 0;
   var numCorrect = 0;
 
@@ -82,6 +82,7 @@ function endQuiz() {
   numCorrect = 0;
 }
 
+document.getElementById("start-btn").addEventListener("click", startQuiz)
 
 
 
