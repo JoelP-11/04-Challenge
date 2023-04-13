@@ -37,10 +37,14 @@ var questions = [
   var questionIndex = 0;
   var numCorrect = 0;
   var time = 60;
+  var timerId;
 
   function countdown() {
     time--;
     document.getElementById("timer").textContent = time;
+    if (time <= 0) {
+      clearInterval(timerId);
+    }
   }
 
 function startQuiz() {
@@ -49,6 +53,11 @@ function startQuiz() {
   document.getElementById("quiz").style.display = "block";
   setInterval(countdown, 1000);
   loadQuestion();
+}
+
+function handleIncorrectAnswer() {
+  time = Math.max(0, time - 5);
+  document.getElementById("timer").textContent = time;
 }
 
 function loadQuestion() {
