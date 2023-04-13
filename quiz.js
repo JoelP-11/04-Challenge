@@ -36,11 +36,18 @@ var questions = [
   
   var questionIndex = 0;
   var numCorrect = 0;
+  var time = 60;
+
+  function countdown() {
+    time--;
+    document.getElementById("timer").textContent = time;
+  }
 
 function startQuiz() {
   document.getElementById("start-btn").style.display = "none";
   document.getElementById("intro").style.display = "none";
   document.getElementById("quiz").style.display = "block";
+  setInterval(countdown, 1000);
   loadQuestion();
 }
 
@@ -83,6 +90,6 @@ function endQuiz() {
 }
 
 document.getElementById("start-btn").addEventListener("click", startQuiz)
-
+document.getElementById("final-submit-btn").addEventListener("click", endQuiz)
 
 
