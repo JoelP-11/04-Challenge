@@ -77,6 +77,7 @@ function checkAnswer(answer) {
       document.getElementById("feedback").innerHTML = "Correct!";
   } else {
     document.getElementById("feedback").innerHTML = "Wrong!";
+    handleIncorrectAnswer();
   }
   
   questionIndex++;
